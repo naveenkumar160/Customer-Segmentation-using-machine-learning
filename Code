@@ -29,7 +29,7 @@ tx_user=pd.merge(tx_user,tx_max_purchase[['CustomerID','Recency']],on='CustomerI
 
 #drawing Histogram
 plt.title('Recency')
-plt.xlabel('Recency Customers(bin)')
+plt.xlabel('Recency (bin)')
 plt.ylabel('No of  Customers(frequency)')
 plt.hist(tx_user['Recency'])
 plt.show()
@@ -142,10 +142,14 @@ plt.scatter(tx_graph.query("Segment == 'Low-Value'")['Frequency'],tx_graph.query
 plt.scatter(tx_graph.query("Segment == 'Mid-Value'")['Frequency'],tx_graph.query("Segment == 'Mid-Value'")['Revenue'], s = 100, c = 'blue', label = 'Cluster 2')
 plt.scatter(tx_graph.query("Segment == 'High-Value'")['Frequency'],tx_graph.query("Segment == 'High-Value'")['Revenue'], s = 100, c = 'green', label = 'Cluster 3')
 
+plt.xlabel('Recency')
+plt.ylabel('Revenue')
 plt.scatter(tx_graph.query("Segment == 'Low-Value'")['Recency'],tx_graph.query("Segment == 'Low-Value'")['Revenue'], s = 100, c = 'red', label = 'Cluster 1')
 plt.scatter(tx_graph.query("Segment == 'Mid-Value'")['Recency'],tx_graph.query("Segment == 'Mid-Value'")['Revenue'], s = 100, c = 'blue', label = 'Cluster 2')
 plt.scatter(tx_graph.query("Segment == 'High-Value'")['Recency'],tx_graph.query("Segment == 'High-Value'")['Revenue'], s = 100, c = 'green', label = 'Cluster 3')
 
+plt.xlabel('Frequency')
+plt.ylabel('Recency')
 plt.scatter(tx_graph.query("Segment == 'Low-Value'")['Frequency'],tx_graph.query("Segment == 'Low-Value'")['Recency'], s = 100, c = 'red', label = 'Cluster 1')
 plt.scatter(tx_graph.query("Segment == 'Mid-Value'")['Frequency'],tx_graph.query("Segment == 'Mid-Value'")['Recency'], s = 100, c = 'blue', label = 'Cluster 2')
 plt.scatter(tx_graph.query("Segment == 'High-Value'")['Frequency'],tx_graph.query("Segment == 'High-Value'")['Recency'], s = 100, c = 'green', label = 'Cluster 3')
